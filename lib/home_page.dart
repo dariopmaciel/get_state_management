@@ -20,16 +20,23 @@ class HomePage extends StatelessWidget {
             },
             child: const Text("Basico Reatividade"),
           ),
-            TextButton(
+          TextButton(
             onPressed: () {
               Get.toNamed('/tiposReativos');
             },
             child: const Text("Tipos Reativos"),
-          ),   TextButton(
+          ),
+          TextButton(
             onPressed: () {
               Get.toNamed('/tiposReativosGenericos');
             },
             child: const Text("Tipos Reativos Genericos"),
+          ),
+          TextButton(
+            onPressed: () {
+              Get.toNamed('/tiposReativosGenericosNulos');
+            },
+            child: const Text("Tipos Reativos Genericos Nulos"),
           ),
         ],
       )),
