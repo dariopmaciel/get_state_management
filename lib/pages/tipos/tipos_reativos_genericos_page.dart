@@ -129,13 +129,22 @@ class TiposReativosGenericosPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                alunoModel.value = Aluno(
+                // alunoModel.value = Aluno(
+                //   id: 10,
+                //   nome: 'VETOR',
+                //   email: 'vetor@vilan.evil.com',
+                //   curso: 'vilan',
+                // );
+                //!não precisa de refresh
+                // alunoModel.refresh();
+
+                //!ou usar calabel class
+                alunoModel(Aluno(
                   id: 10,
                   nome: 'VETOR',
                   email: 'vetor@vilan.evil.com',
                   curso: 'vilan',
-                );
-                // alunoModel.refresh(); //!não precisa de refresh
+                ));
               },
               child: const Text('Alterar alunoModel'),
             ),
