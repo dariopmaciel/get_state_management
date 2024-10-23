@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_state_management/pages/tipos/model/aluno.dart';
 
 class TiposReativosGenericosPage extends StatelessWidget {
   // IGUAL A // final nome = 'Dario'.obs;
@@ -61,6 +62,15 @@ class TiposReativosGenericosPage extends StatelessWidget {
     'nasc': 1984,
     'sexo': 'MASC',
   });
+//! GERANDO MEU PROPRIO RX - alunoModel Observavel
+  final alunoModel = Rx<Aluno>(
+    Aluno(
+      id: 1999,
+      nome: 'CAIO',
+      email: "dariopmaciel@gmail",
+      curso: 'Jornada ADF',
+    ),
+  );
 
   TiposReativosGenericosPage({super.key});
 
@@ -78,12 +88,20 @@ class TiposReativosGenericosPage extends StatelessWidget {
             // Obx(() => Text('Id do aluno ${aluno['id']}')),
             Obx(() {
               debugPrint('>>> Montando ID do aluno');
-
               //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
               return Text('Id do aluno ${aluno.value['id']}');
             }),
             //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
-            Text('Nome do aluno ${aluno.value['nome']}'),
+            Obx(() => Text('Nome do aluno ${aluno.value['nome']}')),
+
+            Obx(() {
+              debugPrint('>>> Montando ID do alunoModel');
+
+              return Text('Id do aluno ${alunoModel.value.id}');
+            }),
+
+            Obx(() => Text('Nome do alunoModel ${alunoModel.value.nome}')),
+
             // Column(children: []), //!Não tem lista dentro pois o 'jornadas' já é uma lista
             //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
             Obx(
@@ -94,7 +112,7 @@ class TiposReativosGenericosPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 aluno.value['id'] = 10;
-                //! NECESSÁRIO REFRESH PARA ATUALIZAR 
+                //! NECESSÁRIO REFRESH PARA ATUALIZAR
                 aluno.refresh();
               },
               child: const Text("Alterar ID"),
@@ -108,6 +126,18 @@ class TiposReativosGenericosPage extends StatelessWidget {
                 jornadas.refresh();
               },
               child: const Text("Adicionar Jornada"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                alunoModel.value = Aluno(
+                  id: 10,
+                  nome: 'VETOR',
+                  email: 'vetor@vilan.evil.com',
+                  curso: 'vilan',
+                );
+                // alunoModel.refresh(); //!não precisa de refresh
+              },
+              child: const Text('Alterar alunoModel'),
             ),
           ],
         ),
