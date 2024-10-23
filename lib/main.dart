@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_state_management/home_page.dart';
 import 'package:get_state_management/pages/basico/reatividade_basica.dart';
+import 'package:get_state_management/pages/tipos/tipos_reativos_genericos_page.dart';
 import 'package:get_state_management/pages/tipos/tipos_reativos_page.dart';
 
 void main() {
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       getPages: [
         GetPage(name: '/', page: () => const HomePage()),
-        GetPage(name: '/basico', page: () =>  ReatividadeBasica()),
-        GetPage(name: '/tiposReativos', page: () =>   TiposReativosPage(), ),
+        GetPage(name: '/basico', page: () => ReatividadeBasica()),
+        GetPage(name: '/tiposReativos', page: () => TiposReativosPage()),
+        GetPage(name: '/tiposReativosGenericos', page: () => TiposReativosGenericosPage()),
       ],
     );
   }

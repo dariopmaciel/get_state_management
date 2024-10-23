@@ -71,7 +71,14 @@ class TiposReativosPage extends StatelessWidget {
               onPressed: () {
                 jornadas.add('Jornada Lógica');
               },
-              child: const Text("Adicionar Jornada"),
+              child: const Text("Adicionar Jornada .ADD"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                jornadas.assign(
+                    'Jornada Lógica'); //!ZERA a LISTA e add o ultomo item 'Jornada Lógica'
+              },
+              child: const Text("Adicionar Jornada .ASSING"),
             ),
           ],
         ),
