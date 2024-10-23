@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ReatividadeBasica extends StatelessWidget {
+  final _couter = 0.obs;
 
-
-  final _couter = 0;
-  const ReatividadeBasica({super.key});
+  ReatividadeBasica({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,13 @@ class ReatividadeBasica extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Counter: '),
-              const Text('1'),
+              Obx(() {
+                return Text('Counter: ${_couter.value}');
+              }),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _couter.value++;
+                },
                 child: const Text('SOMA + 1'),
               ),
             ],

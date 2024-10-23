@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       getPages: [
         GetPage(name: '/', page: () => const HomePage()),
-        GetPage(name: '/basico', page: () => const ReatividadeBasica()),
+        GetPage(name: '/basico', page: () =>  ReatividadeBasica()),
       ],
     );
   }
