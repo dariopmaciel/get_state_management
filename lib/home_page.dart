@@ -15,41 +15,41 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
-            onPressed: () {
-              Get.toNamed('/basico');
-            },
-            child: const Text("Basico Reatividade"),
-          ),
+              onPressed: () {
+                Get.toNamed('/basico');
+              },
+              child: const Text("Basico Reatividade")),
           TextButton(
-            onPressed: () {
-              Get.toNamed('/tiposReativos');
-            },
-            child: const Text("Tipos Reativos"),
-          ),
+              onPressed: () {
+                Get.toNamed('/tiposReativos');
+              },
+              child: const Text("Tipos Reativos")),
           TextButton(
-            onPressed: () {
-              Get.toNamed('/tiposReativosGenericos');
-            },
-            child: const Text("Tipos Reativos Genericos"),
-          ),
+              onPressed: () {
+                Get.toNamed('/tiposReativosGenericos');
+              },
+              child: const Text("Tipos Reativos Genericos")),
           TextButton(
-            onPressed: () {
-              Get.toNamed('/tiposReativosGenericosNulos');
-            },
-            child: const Text("Tipos Reativos Genericos Nulos"),
-          ),
+              onPressed: () {
+                Get.toNamed('/tiposReativosGenericosNulos');
+              },
+              child: const Text("Tipos Reativos Genericos Nulos")),
           TextButton(
-            onPressed: () {
-              Get.toNamed('/tiposObs');
-            },
-            child: const Text("Tipos Obs"),
-          ),
-           TextButton(
-            onPressed: () {
-              Get.toNamed('/atualizacao');
-            },
-            child: const Text("Atualização de Objetos"),
-          ),
+              onPressed: () {
+                Get.toNamed('/tiposObs');
+              },
+              child: const Text("Tipos Obs")),
+          TextButton(
+              onPressed: () {
+                Get.toNamed('/atualizacao');
+              },
+              child: const Text("Atualização de Objetos")),
+
+              TextButton(
+              onPressed: () {
+                Get.toNamed('/controllers');
+              },
+              child: const Text("Controllers")),
         ],
       )),
     );
