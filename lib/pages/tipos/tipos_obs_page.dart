@@ -46,10 +46,10 @@ class TiposObsPage extends StatelessWidget {
             Obx(() {
               debugPrint('>>> Montando ID do aluno');
               //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
-              return Text('Id do aluno ${aluno.value?['id']}');
+              return Text('Id do aluno ${aluno['id']}');
             }),
             //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
-            Obx(() => Text('Nome do aluno ${aluno.value?['nome']}')),
+            Obx(() => Text('Nome do aluno ${aluno['nome']}')),
 
             Obx(() {
               debugPrint('>>> Montando ID do alunoModel');
@@ -63,12 +63,12 @@ class TiposObsPage extends StatelessWidget {
             //!>>>>>>>>>>>>>>> RECUPERAÇÃO DO GENERICO
             Obx(
               () => Column(
-                children: jornadas.value?.map(Text.new).toList() ?? [],
+                children: jornadas.map(Text.new).toList(),
               ),
             ),
             ElevatedButton(
               onPressed: () {
-                aluno.value?['id'] = 10;
+                aluno['id'] = 10;
                 //! NECESSÁRIO REFRESH PARA ATUALIZAR
                 aluno.refresh();
               },
@@ -78,7 +78,7 @@ class TiposObsPage extends StatelessWidget {
               onPressed: () {
                 // jornadas.add('Jornada Lógica');
                 //!ZERA a LISTA e add o ultomo item 'Jornada Lógica'
-                jornadas.value?.assign('Jornada Lógica');
+                jornadas.assign('Jornada Lógica');
                 //! NECESSÁRIO REFRESH PARA ATUALIZAR
                 jornadas.refresh();
               },
