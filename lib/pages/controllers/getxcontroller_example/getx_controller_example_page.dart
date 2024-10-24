@@ -28,7 +28,9 @@ class _GetxControllerExamplePageState extends State<GetxControllerExamplePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() => Text(Get.find<Controller>().nome.value)),
+            //!SEMPRE deve se privar o value, sendo mantido no get da controller
+            // Obx(() => Text(Get.find<Controller>().nome.value)),
+            Obx(() => Text(Get.find<Controller>().nome)),
             ElevatedButton(
               onPressed: () {
                 Get.find<Controller>().alterarDados();

@@ -3,15 +3,18 @@ import 'package:get/get.dart';
 class Controller extends GetxController {
   //* aqui podem ficar CONCENTRADOS as variaveis observadas
   // Devido a 'nome' ser um RXString, recuperação via 'Get.find<Controller>().nome.value'
-  final nome = 'dario'.obs;
+  final _nome = 'dario'.obs;
+
+  //!sempre disponibize 
+  String get nome => _nome.value;
 
   //!metodo que será Executado a controller for iniciada
   @override
   Future<void> onInit() async {
     //! NÃAAO DELEQUE ITENS DE TELA PARA A CONTROLLER
-    //!DELAY É PARA A TELLLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    //*DELAY É PARA A TELLLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    //TODO !DELAY É PARA A TELLLAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    //!Lembrete* Nunca!!! Colocar TextEditingController, GlobalKeys, Animated (coisas da tela, ciclo de vida)- Dentro da Controller.
+    //*Lembrete* Nunca!!! Colocar TextEditingController, GlobalKeys, Animated (coisas da tela, ciclo de vida)- Dentro da Controller.
+    //TODO Lembrete* Nunca!!! Colocar TextEditingController, GlobalKeys, Animated (coisas da tela, ciclo de vida)- Dentro da Controller.
     // await 2.seconds.delay() ;// igual a   // const Duration(seconds: 2);
     print('=>>>onInit');
     super.onInit();
@@ -33,6 +36,6 @@ class Controller extends GetxController {
 
   //! desta forma os metodos podem ficar centralizados e carregados SOMENTE quando necessários
   void alterarDados() {
-    nome("Jacó");
+    _nome("Jacó");
   }
 }
