@@ -37,6 +37,15 @@ class _GetxControllerExamplePageState extends State<GetxControllerExamplePage> {
               },
               child: const Text("Alterar"),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+                Get.reload<Controller>();
+                //!é necessário atualizar a tela, por isto o 'setState' mas é necessário o LAZYPUT
+                setState(() {});
+              },
+              child: const Text("Recarregar Controller-Reload de objetos"),
+            ),
           ],
         ),
       ),

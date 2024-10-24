@@ -53,7 +53,10 @@ class MyApp extends StatelessWidget {
                   //   Get.lazyPut(() => Controller());
                   // }),
                   //*correto
-                  binding: BindingsBuilder.put(() => Controller()),
+                  //para fazer um reload não se pode usar PUT pois ele instancia na hora, por isto usar lazyput
+                  // binding: BindingsBuilder.put(() => Controller()),
+                  binding:
+                      BindingsBuilder(() => Get.lazyPut(() => Controller())),
                   page: () => const GetxControllerExamplePage()),
             ]),
       ],
