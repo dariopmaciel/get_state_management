@@ -32,14 +32,16 @@ class AtualizacaoObjetosPage extends StatelessWidget {
                 child: const Text("Atualizando COM REFRESH")),
 
             //!usando copyWith no 'usuarioModel'
+            //!ATRIBUTO NO USUARIOmODEL não pode ser 'final'
             ElevatedButton(
                 onPressed: () {
                   alunoModel.value =
                       alunoModel.value.copyWith(nome: 'Guilherme - CopyWith');
                 },
-                child: const Text("Atualizando COM COPYWITH")),
+                child: const Text("Atualizando COM COPYWITHopyWith")),
 
             //!usando copyWith no 'usuarioModelUPDATE do RX'
+
             ElevatedButton(
                 onPressed: () {
                   alunoModel.update((val) {
