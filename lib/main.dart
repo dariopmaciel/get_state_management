@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_state_management/home_page.dart';
+import 'package:get_state_management/pages/atualiza%C3%A7%C3%A3o/atualizacao_objetos_page.dart';
 import 'package:get_state_management/pages/basico/reatividade_basica.dart';
 import 'package:get_state_management/pages/tipos/tipos_obs_page.dart';
 import 'package:get_state_management/pages/tipos/tipos_reativos_genericos_nulos_page.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/tiposReativosGenericos', page: () => TiposReativosGenericosPage()),
         GetPage(name: '/tiposReativosGenericosNulos', page: () => TiposReativosGenericosNuloPage()),
         GetPage(name: '/tiposObs', page: () => TiposObsPage()),
+        GetPage(name: '/atualizacao', page: () =>  AtualizacaoObjetosPage()),
       ],
     );
   }
